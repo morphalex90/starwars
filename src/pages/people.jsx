@@ -41,22 +41,26 @@ export default function People() {
 								<tr>
 									<th>Nome</th>
 									<th>Altezza</th>
+									<th>Massa</th>
+									<th>Pianeta</th>
+									<th>Gender</th>
 								</tr>
 							</thead>
 							<tbody>
 								{people.length > 0 ?
-									<>
-										{(people.map((person) => {
-											return (
-												<tr key={person.id}>
-													<td>{person.name}</td>
-													<td>{person.height != null ? person.height + 'cm' : ''}</td>
-												</tr>
-											)
-										}))}
-									</>
+									(people.map((person) => {
+										return (
+											<tr key={person.id}>
+												<td>{person.name}</td>
+												<td>{person.height != null ? person.height + 'cm' : ''}</td>
+												<td>{person.mass != null ? person.mass + 'kg' : ''}</td>
+												<td>{person.planet != null ? person.planet.name : ''}</td>
+												<td>{person.gender != null ? person.gender : ''}</td>
+											</tr>
+										)
+									}))
 									:
-									<tr><td>No People, please wait</td></tr>
+									<tr><td colSpan={100}>No people, please wait</td></tr>
 								}
 							</tbody>
 						</table>
