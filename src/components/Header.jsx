@@ -11,8 +11,13 @@ export default function Header() {
                     <Link href='/'>StarWars</Link>
                 </div>
 
-                <div className="header__categories">
-                    Menu
+                <div className="header__menu">
+                    <nav>
+                        <ul>
+                            <li><Link href="/people/">People</Link></li>
+                            <li><Link href="/planets/">Planets</Link></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>
