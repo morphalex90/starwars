@@ -3,17 +3,17 @@ import Head from 'next/head';
 import Layout from '@/components/Layout';
 import axios from '@/lib/axios';
 
-export default function People() {
-	const [people, setPeople] = useState([]);
+export default function Planets() {
+	const [planets, setPlanets] = useState([]);
 
 	useEffect(() => {
-		getPeople();
+		getPlanets();
 	}, []);
 
-	const getPeople = async () => {
-		await axios.get('/api/v1/sw/people')
+	const getPlanets = async () => {
+		await axios.get('/api/v1/sw/planets')
 			.then((response) => {
-				setPeople(response.data.people);
+				setPlanets(response.data.planets);
 			})
 			.catch((error) => {
 				console.error(error);
@@ -23,14 +23,14 @@ export default function People() {
 	return (
 		<>
 			<Head>
-				<link rel="canonical" href="https://starwars.icu/people" />
-				<title>People | StarWars</title>
+				<link rel="canonical" href="https://starwars.icu/planets" />
+				<title>Planets | StarWars</title>
 				{/* <meta name="description" content="Do you need cats? Are you having a bad day? Here you can find all the cats you need" /> */}
 
 				<meta property="og:type" content="website" />
-				<meta property="og:title" content="People | StarWars" />
+				<meta property="og:title" content="Planets | StarWars" />
 				{/* <meta property="og:description" content="Do you need cats? Are you having a bad day? Here you can find all the cats you need" /> */}
-				<meta property="og:url" content="https://starwars.icu/people" />
+				<meta property="og:url" content="https://starwars.icu/planets" />
 			</Head>
 
 			<Layout>
@@ -40,23 +40,23 @@ export default function People() {
 							<thead>
 								<tr>
 									<th>Nome</th>
-									<th>Altezza</th>
+									<th>Diametro</th>
 								</tr>
 							</thead>
 							<tbody>
-								{people.length > 0 ?
+								{planets.length > 0 ?
 									<>
-										{(people.map((person) => {
+										{(planets.map((planet) => {
 											return (
-												<tr key={person.id}>
-													<td>{person.name}</td>
-													<td>{person.height != null ? person.height + 'cm' : ''}</td>
+												<tr key={planet.id}>
+													<td>{planet.name}</td>
+													<td>{planet.diameter != null ? planet.diameter + 'km' : ''}</td>
 												</tr>
 											)
 										}))}
 									</>
 									:
-									<tr><td>No People, please wait</td></tr>
+									<tr><td>No planets, please wait</td></tr>
 								}
 							</tbody>
 						</table>
