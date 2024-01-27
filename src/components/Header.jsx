@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 
 export default function Header() {
@@ -11,14 +10,14 @@ export default function Header() {
                     <Link href='/'>StarWars</Link>
                 </div>
 
-                <div className="header__menu">
+                {/* <div className="header__menu">
                     <nav>
                         <ul>
                             <li><Link href="/people/">People</Link></li>
                             <li><Link href="/planets/">Planets</Link></li>
                         </ul>
                     </nav>
-                </div>
+                </div> */}
             </div>
         </header>
     );
