@@ -1,0 +1,33 @@
+.react-tabs {
+    &__tab-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        list-style-type: none;
+        margin-bottom: 0;
+        padding-left: 0;
+        margin-bottom: 12px;
+    }
+
+    &__tab {
+        background: rgba(67, 186, 135, 0.12);
+        border-radius: 8px;
+        padding: 11px 23px;
+
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+
+        &--selected,
+        &:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        &--disabled {
+            cursor: not-allowed;
+            color: #464343;
+            background-color: #f1f1f1;
+        }
+    }
+}
