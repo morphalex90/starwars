@@ -20,7 +20,7 @@ export default function Home() {
 					<div className="section__container">
 						<div style={{ height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 							<div>
-								No cats found, please try again
+								Wrong page, NERD!
 							</div>
 						</div>
 					</div>
