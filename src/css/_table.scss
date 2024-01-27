@@ -8,22 +8,6 @@
         font-size: 13px;
     }
 
-    .well &:last-child {
-        margin-bottom: 0;
-    }
-
-    &__sort {
-        cursor: pointer;
-
-        &.--active-DESC::after {
-            content: "↓";
-        }
-
-        &.--active-ASC::after {
-            content: "↑";
-        }
-    }
-
     td,
     th {
         border-bottom: 1px solid #ddd;
@@ -33,14 +17,8 @@
     }
 
     tr {
-        &.--hidden {
-            display: none;
-        }
-
-        &:first-child {
-            th {
-                border-top: 1px solid #ddd;
-            }
+        &:hover {
+            background-color: red;
         }
 
         th {
@@ -49,21 +27,11 @@
     }
 
     td {
-        time {
-            font-size: 12px;
-        }
-
         img {
             height: 40px;
             width: 40px;
             border-radius: 50%;
             vertical-align: middle;
-        }
-
-        a {
-            display: flex;
-            align-items: center;
-            gap: 0 10px;
         }
     }
 }
