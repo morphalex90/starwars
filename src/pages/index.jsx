@@ -1,6 +1,8 @@
-import React from 'react';
 import Head from 'next/head';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Layout from '@/components/Layout';
+import People from '@/components/people';
+import Planets from '@/components/planets';
 
 export default function Home() {
 	return (
@@ -18,10 +20,22 @@ export default function Home() {
 			<Layout>
 				<section className="section">
 					<div className="section__container">
-						StarWars
+						<Tabs>
+							<TabList>
+								<Tab>🧑 Persone</Tab>
+								<Tab>🪐 Pianeti</Tab>
+							</TabList>
+
+							<TabPanel>
+								<People />
+							</TabPanel>
+
+							<TabPanel>
+								<Planets />
+							</TabPanel>
+						</Tabs>
 					</div>
 				</section>
-
 			</Layout>
 		</>
 	)
